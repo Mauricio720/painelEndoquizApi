@@ -1,0 +1,181 @@
+html{
+    scroll-behavior: smooth;
+}
+
+.alternative__row{
+    min-height: 55px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    margin: 5px;
+    background-color: white;
+}
+
+.alternativeRow__slot{
+    flex: 1;
+    display: flex;
+}
+
+.alternativeRow__slot--input{
+    flex: 2;
+}
+
+.alternativeRow__input{
+    flex: 1;
+    border: none;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+.alternativeRow__input:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.alternativeRow__btn{
+    width: 30px;
+    height: 30px;
+    border:1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+}
+
+.opacityBtnIsCorrect{
+    background-color: green;
+    opacity: 0.2;
+}
+
+.opacityBtnIsWrong{
+    background-color: #c70000;
+    opacity: 0.2;
+}
+
+.isCorrect{
+    background-color: green;
+}
+
+.isWrong{
+    background-color: #c70000;
+}
+
+.questionInput{
+    font-size: 18px;
+}
+
+@keyframes errorBackgroundAnimation {
+	0% {background-color:  #fadddd}
+	25% {background-color: white;}
+	50% {background-color: #fadddd;}
+	75% {background-color:white;}
+	100% {background-color: #fadddd;}
+}
+
+
+.alternative__row--alert{
+    padding: 5px;
+    font-size: 15px;
+    background-color: #fadddd;
+    color: gray;
+    animation-name:errorBackgroundAnimation;
+	animation-duration:4s;
+	animation-delay:1s;
+	animation-iteration-count:infinite;
+}
+
+@keyframes errorAnimation {
+	0% {border: 2px solid #fadddd;}
+	25% {border: 2px solid #ccc;}
+	50% {border: 2px solid #fadddd;}
+	75% {border:2px solid #ccc;}
+	100% {border: 2px solid #fadddd;}
+}
+
+
+.alternative__row--error{
+    border: 2px solid #fadddd;
+    animation-name:errorAnimation;
+	animation-duration:4s;
+	animation-delay:1s;
+	animation-iteration-count:infinite;
+}
+
+#goToAddBtn{
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.default__question{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 180px;
+    transition: all ease .6s;
+    overflow:hidden ;
+    box-shadow: 2px 1px 1px #ccc;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+}
+
+.defaultQuestion__header{
+    width: auto;
+    height: 30px;
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.defaultQuestion__slot{
+    flex: 1;
+    padding: 5px;
+    height: 150px;
+}
+
+.defaultQuestion__container{
+    display: flex;
+}
+
+.defaultQuestion__questionText{
+    font-size: 16px;
+    overflow: auto;
+    margin-top: 10px;
+}
+
+.defaultAlternative__row{
+    border-bottom: 1px solid #ccc;
+}
+
+.cardImage{
+    max-height: 485px;
+}
+
+.cardImage img{
+    max-height: 485px;
+}
+
+.isCorrectAlternative{
+    color: #2eb85c;
+    border-color: #2eb85c;
+    border-width: 2px;
+    transition: all ease .4s;
+}
+
+.isNotCorrectAlternative{
+    color: red;
+    border-color: red;
+    border-width: 2px;
+    transition: all ease .2s;
+}

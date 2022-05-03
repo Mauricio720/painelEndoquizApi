@@ -1,0 +1,51 @@
+.classified{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    transition: all ease .6s;
+    overflow:hidden ;
+    box-shadow: 2px 1px 1px #ccc;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.classified__item{
+    min-height: 100px;
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.classified__slot{
+    flex: 1;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.classified__info{
+    padding: 5px;
+    height: 135px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.classifed__subtopics{
+    height: 210px;
+    margin-top: 15px;
+}
+
+.cardImage{
+    max-height: 485px;
+}
+
+.cardImage img{
+    max-height: 485px;
+}

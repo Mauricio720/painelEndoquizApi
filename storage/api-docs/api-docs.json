@@ -1,0 +1,2102 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Endoquiz API",
+        "description": "Rotas do Endoquiz",
+        "contact": {
+            "email": "admin@admin.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://endoquizapi.endoquiz.com.br/api",
+            "description": "Demo API Server"
+        }
+    ],
+    "paths": {
+        "/auth/authentication": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "AUTHENTICATION",
+                "description": "Rota para autenticação do usuário",
+                "operationId": "e69eb9f73ca7e3a46312f9d097709b83",
+                "parameters": [
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/auth/add_user": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "ADDUSER",
+                "description": "Rota para adição do usuário",
+                "operationId": "2869e771014e80cbbfec81a302ef9eb5",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Informe o nome do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "description": "Informe o sobrenome do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Informe o email do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Informe a senha do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/auth/login": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "LOGIN",
+                "description": "Rota para realização de login",
+                "operationId": "99d66635c4992aeaa6aa44ff653d0563",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Email para login",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "description": "Senha para login",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/auth/logout": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "LOGOUT",
+                "description": "Rota para realização do logout do usuário",
+                "operationId": "6abf3b64a4bc7838d56346f05a5153af",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/auth/refresh": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "REFRESH",
+                "description": "Rota para atualizar e gerar um novo token para usuário",
+                "operationId": "e7ab7446393758bb71fd1946a349e500",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_classified": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETALLCLASSIFIED",
+                "description": "Rota para retornar todos os classificados com os tópicos",
+                "operationId": "571a4e3fbba3261bd3b235b05795b41f",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_classified_subtopic": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETALLCLASSIFIEDSUBTOPICS",
+                "description": "Rota para retornar todos os subtópicos e assuntos de algum topico do classificado",
+                "operationId": "25db67d1d6a659b13b5bb337e355f319",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTopic",
+                        "in": "query",
+                        "description": "Informe o id do tópico",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_images_videos": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETALLIMAGESVIDEOS",
+                "description": "Rota para retornar os videos e imagens",
+                "operationId": "2a9eaefe3e5a03ddde15f273254483b4",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Informe o titulo",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Informe a descrição",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Informe a pagina",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_subjects": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETSUBJECTS",
+                "description": "Rota para retornar as areas e assuntos das provas",
+                "operationId": "86ac70719f4ceda01253ea4d8a38ffde",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_supports": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETSUPORT",
+                "description": "Rota para retorno dos suportes do usuário",
+                "operationId": "ed5c3ad82efe2d4df454da53a5818bd8",
+                "parameters": [
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/addSupport": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "ADDSUPORT",
+                "description": "Rota para adição de suporte para o usuário",
+                "operationId": "9447f85379f187d7fedcc23b0d923b72",
+                "parameters": [
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "description": "Informe o assunto do suporte",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "content",
+                        "in": "query",
+                        "description": "Informe o conteúdo do suporte",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/add_support_content": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "ADDSUPORTCONTENT",
+                "description": "Rota para adição de conteudo para o suporte para o usuário",
+                "operationId": "136213aedf8c0aa3fd362d675844861c",
+                "parameters": [
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idSupport",
+                        "in": "query",
+                        "description": "Informe o id do suporte",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "content",
+                        "in": "query",
+                        "description": "Informe o conteúdo do suporte",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/support_resolved": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "RESOLVEDSUPORT",
+                "description": "Rota para marcar como resolvido o supporte",
+                "operationId": "13ad0bad200777beb41fe292d6f38b23",
+                "parameters": [
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idSupport",
+                        "in": "query",
+                        "description": "Informe o id do suporte",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_all_test": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETALLTEST",
+                "description": "Rota para retornar todas as rotas desse usuário",
+                "operationId": "fca013dd960bab3494c6b81b21dae926",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_test": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETTEST",
+                "description": "Rota para retornar a prova do usuário com as questões",
+                "operationId": "6ede32afb652930b41a767003e6050f4",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Informe o numero da pagina da prova",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/create_test": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "CREATETEST",
+                "description": "Rota para criar a prova do usuário com as questões",
+                "operationId": "0a09575d6e3ba9c414f92cdfb16abeff",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Informe o nome/titulo da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "all_subtopic_test",
+                        "in": "query",
+                        "description": "Informe os ids dos assuntos da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1,2,3"
+                    },
+                    {
+                        "name": "start",
+                        "in": "query",
+                        "description": "Informe se ja quer criar a prova e inicia-la",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/start_test": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "STARTTEST",
+                "description": "Rota para iniciar a prova (a prova tem que estar recem-criada ou pausada)",
+                "operationId": "0db0c29d0a9b652a2a6a23a23462732f",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/pause_test": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "PAUSETEST",
+                "description": "Rota para pausar a prova ",
+                "operationId": "0f2e9e902b87484acd4eb0323279cd68",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/restart_test": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "RESTARTTEST",
+                "description": "Rota para reiniciar a prova ",
+                "operationId": "1701874e56bef62490cba3f76078c2c2",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/finish_test": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "FINISHTEST",
+                "description": "Rota para finalizar a prova  (registra a data e a hora que a prova foi finalizada e \n     *      calcula todo o desempenho do usuário: tempo de prova, questões respondidas e não respondidas, \n     *      acertos e erros (calculado em cima das questões respondidas) e porcentagem de acertos da prova \n     *      (calculado em cima das questões respondidas)",
+                "operationId": "cf1a816f47aff45a3ae3200c407b6082",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/ask_question": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "ASKQUESTION",
+                "description": "Rota para responder alguma questão da prova (A prova tem que estar em andamento (status=2))",
+                "operationId": "393c75f5d9f7fd019c5d8e8210b54992",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idQuestion",
+                        "in": "query",
+                        "description": "Informe o id da questão que quer responder",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "choosenAlternative",
+                        "in": "query",
+                        "description": "Informe o id da alternativa escolhida pelo usuário dessa questão",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/annotation_question": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "ANNOTATIONQUESTION",
+                "description": "Rota para inserir alguma anotação na questão da prova",
+                "operationId": "11f036b637cf096a83064c6ffdf8a7b0",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idQuestion",
+                        "in": "query",
+                        "description": "Informe o id da questão que quer responder",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "annotation",
+                        "in": "query",
+                        "description": "Informe a anotação digitada pelo usuário dessa questão",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_annotation_question": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETANNOTATIONQUESTION",
+                "description": "Rota para pegas as questões com anotações",
+                "operationId": "8c3ce80406eaebdef314f213b1d55dec",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/favorite_question": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "FAVORITEQUESTION",
+                "description": "Rota para favoritar ou desfavoritar alguma questão da prova",
+                "operationId": "34ead12242463441fe00ec6d5d25ed7a",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idQuestion",
+                        "in": "query",
+                        "description": "Informe o id da questão que quer favoritar ou desfavoritar",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/not_used_alternative": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "NOTUSEDALTERNATIVE",
+                "description": "Rota para descartar alguma alternativa da questão",
+                "operationId": "3c3c452892d1686ec9904ffc38f0ac88",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idQuestion",
+                        "in": "query",
+                        "description": "Informe o id da questão que quer favoritar ou desfavoritar",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "choosenAlternative",
+                        "in": "query",
+                        "description": "Informe o id da alternativa escolhida pelo usuário para descartar",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_favorite_question": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETFAVORITEQUESTION",
+                "description": "Rota para retornar as questões favoritas de alguma prova",
+                "operationId": "fc0060736efbde35bb489fd0cddf5348",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/delete_test": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "DELETETEST",
+                "description": "Rota para deletar a prova",
+                "operationId": "f95d2c60c70b2e22cfa5228b2bb976a4",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idTest",
+                        "in": "query",
+                        "description": "Informe o id da prova",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/get_user": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "GETUSER",
+                "description": "Rota para pegar as informações do usuário",
+                "operationId": "a7074249201de2de4508f51d3e54b953",
+                "parameters": [
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/update_user": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "UPDATEUSER",
+                "description": "Rota para atualizar usuário",
+                "operationId": "77b1a2c61f17b231108e6abaae749c2b",
+                "parameters": [
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Informe o nome do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "lastname",
+                        "in": "query",
+                        "description": "Informe o sobrenome do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Informe o email do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/update_address_info": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "UPDATEUSERINFO",
+                "description": "Rota para atualizar informações extras(o endereço) do usuário",
+                "operationId": "373d8d6cace20579518a1560d874629f",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "street",
+                        "in": "query",
+                        "description": "Informe a rua do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "number",
+                        "in": "query",
+                        "description": "Informe o numero do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "neighboorhood",
+                        "in": "query",
+                        "description": "Informe o bairro do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "city",
+                        "in": "query",
+                        "description": "Informe a cidade do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "state",
+                        "in": "query",
+                        "description": "Informe o estado do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "cep",
+                        "in": "query",
+                        "description": "Informe o cep do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/update_hospital_info": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "UPDATEHOSPITALINFO",
+                "description": "Rota para adicionar informações sobre o hospital",
+                "operationId": "68a4bbb0835e9dfd0868258ea6b27733",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "query",
+                        "description": "Informe o token do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "idUser",
+                        "in": "query",
+                        "description": "Informe o id do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "hospitalWork",
+                        "in": "query",
+                        "description": "Informe o hospital que trabalha",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "residenceLocal",
+                        "in": "query",
+                        "description": "Informe o hospital que fez residência",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/reset_pass": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "RESETPASS",
+                "description": "Rota para mandar o email e trocar a senha (Esqueci a senha)",
+                "operationId": "cd22b62e47a7abe89294edc8eee5cb64",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Informe o email do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        },
+        "/update_pass": {
+            "post": {
+                "tags": [
+                    "Endoquiz"
+                ],
+                "summary": "UPDATEPASS",
+                "description": "Rota para alterar a senha com o código enviado para o email (Esqueci a senha)",
+                "operationId": "e94a3878aa5b4f157dff05e22fbde452",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "query",
+                        "description": "Informe o email do usuário",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "hash",
+                        "in": "query",
+                        "description": "Informe a hash enviado no email",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "newPass",
+                        "in": "query",
+                        "description": "Informe a nova senha",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "202": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Resource Not Found"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Endoquiz",
+            "description": "Endpoints do Endoquiz"
+        }
+    ],
+    "security": [
+        []
+    ]
+}
