@@ -29,3 +29,7 @@ Essa api utiliza o storage do laravel para upload de imagens, então caso você 
 
 Após essas configurações utilize o php artisan key:generate para criar um nova chave, agora basta usar o php artisan serve para iniciar a aplicação caso esteja local.
 
+
+### Observações
+Os arquivos em javascript foram mimificados e puxados a partir da pasta public. Os arquivos sem estar mimificados para serem alterados estão na pasta resources. Antes de começar a alterar os arquivos caso precisar, executar o comando gulp para ir mimificando automaticamente enquanto vai alterando.
+
