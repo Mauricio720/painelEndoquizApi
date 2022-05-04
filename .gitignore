@@ -14,9 +14,6 @@
 /public/icons
 /public/vendors
 /storage/*.key
-/storage/app/public/classified/
-/storage/app/public/imagesVideos/
-/storage/app/public/questionsImages/
 /vendor
 .env
 .env.backup
